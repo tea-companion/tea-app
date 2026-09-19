@@ -2,7 +2,8 @@
 
 Tea is a private, self-hosted AI companion app for macOS. It can run entirely on your Mac, or use API keys you provide to run selected components on rented GPUs. Tea itself is free to run; any GPU costs are paid directly to your chosen provider—there is no Tea account or subscription.
 
-> **Status:** Pre-alpha. There is nothing to download yet.
+> **Status:** Pre-alpha. The first experimental build is available from
+> [Releases](https://github.com/tea-companion/tea-app/releases).
 
 Tea is an experimental personal project built around conversation and generated media. It is intended for adults and may support explicit content.
 
@@ -10,9 +11,9 @@ This repository will be the public home for early builds, setup instructions, an
 
 ## First alpha
 
-The first release will be deliberately small:
+The first release is deliberately small:
 
-- a downloadable macOS build;
+- a terminal-assisted Apple Silicon macOS download;
 - enough documentation to get it running;
 - clear notes about limitations and rough edges;
 - no accounts, subscriptions, or hosted service.

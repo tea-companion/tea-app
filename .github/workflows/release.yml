@@ -1,0 +1,30 @@
+name: Publish prerelease
+
+on:
+  push:
+    tags:
+      - "v*-prealpha"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify release checksum
+        working-directory: release
+        run: sha256sum --check Tea-0.1.0-prealpha-macos-arm64.sha256
+
+      - name: Create GitHub prerelease
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            release/Tea-0.1.0-prealpha-macos-arm64.zip \
+            release/Tea-0.1.0-prealpha-macos-arm64.sha256 \
+            --title "Tea 0.1.0 pre-alpha" \
+            --notes-file release/RELEASE_NOTES.md \
+            --prerelease
